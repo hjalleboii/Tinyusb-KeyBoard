@@ -1,0 +1,2 @@
+/home/hjalmar/Desktop/Tinyusb-KeyBoard/build/CMakeFiles/edit_cache.dir
+/home/hjalmar/Desktop/Tinyusb-KeyBoard/build/CMakeFiles/rebuild_cache.dir
