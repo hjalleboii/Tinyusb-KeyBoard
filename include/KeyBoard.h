@@ -7,6 +7,10 @@
 #include "KeyBoardLayouts.h"
 #define BIT(x) 1 << x
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 struct key_data
 {
     uint8_t modifiers;
@@ -45,13 +49,6 @@ uint8_t KeyBoard_scancode_to_hid_key(uint16_t scancode);
 
 bool KeyBoard_single_key_exists_in_key_data(const key_data_single_key_t *skd, const key_data_t *kd);
 
-enum STATUS KeyBoard_get_status();
-
-
-
-int KeyBoard_Init();
-
-bool KeyBoard_tud_task_timer_cb(repeating_timer_t *rt);
 
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const *buffer, uint16_t bufsize);
 uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t *buffer, uint16_t reqlen);
@@ -62,4 +59,7 @@ void tud_suspend_cb(bool remote_wakeup_en);
 void tud_umount_cb(void);
 void tud_mount_cb(void);
 
+#ifdef __cplusplus
+}
+#endif
 #endif
