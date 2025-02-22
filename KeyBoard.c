@@ -135,7 +135,7 @@ int KeyBoard_send_key_data(const key_data_t *keys, size_t count)
       tud_task();
       tight_loop_contents();
     };
-    tud_hid_keyboard_report(1, keys[i].modifiers, NULL);
+    tud_hid_keyboard_report(1,NULL, NULL);
   }
 
   return 0;
@@ -159,7 +159,7 @@ int KeyBoard_send_key_data_sk(const key_data_single_key_t *keys, size_t count)
       tud_task();
       tight_loop_contents();
     };
-    tud_hid_keyboard_report(1, keys[i].mod, NULL);
+    tud_hid_keyboard_report(1, NULL, NULL);
   }
 
   return 0;
